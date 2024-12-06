@@ -57,3 +57,14 @@ def premier_plus_proche(n):
     while not est_premier(n):
         n += 1
     return n
+
+def premier_plus_proche(n):
+    n = random.randint(10,20)
+    reponse = int(input("veuillez saisir l'entier supérieur premier le plus proche de n"))
+    premier_plus_proche(n)
+    if n == reponse:
+        print("Bravo vous etes le meilleur vous venez de remporter une clef")
+        return True
+    else:
+        print("Il s'agirait de faire des efforts vous etes en école d'ingénieur. Vous venez de perdre une clée")
+        return False
