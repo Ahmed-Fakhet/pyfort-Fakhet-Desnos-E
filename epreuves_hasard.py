@@ -1,4 +1,4 @@
-from random import randint
+from random import
 def bonneteau():
     print("Bienvenue au jeu du Bonneteau !\nTrouvez la clé en 2 essais.")
     presence_clef = randint(1, 3)
