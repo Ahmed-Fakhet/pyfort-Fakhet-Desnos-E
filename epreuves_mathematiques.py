@@ -58,7 +58,7 @@ def premier_plus_proche(n):
         n += 1
     return n
 
-def premier_plus_proche(n):
+def epreuve_math_premier(n):
     n = random.randint(10,20)
     reponse = int(input("veuillez saisir l'entier supérieur premier le plus proche de n"))
     premier_plus_proche(n)
@@ -68,3 +68,39 @@ def premier_plus_proche(n):
     else:
         print("Il s'agirait de faire des efforts vous etes en école d'ingénieur. Vous venez de perdre une clée")
         return False
+
+
+
+
+
+def epreuve_roulette_mathematiques():
+    nombres = [random.randint(1, 20) for _ in range(5)]
+    print(nombres)
+    operation = random.choice(['addition', 'soustraction', 'multiplication'])
+    somme = 0
+    sommeprod = 1
+    for i in range(len(nombres)):
+        if operation == 'addition':
+            somme += nombres[i]
+        elif operation == 'soustraction':
+            somme -= nombres[i]
+        else :
+            sommeprod *= nombres[i]
+    reponse = int(input("quelle est le resultat de l'/la", operation, "entre les nombres de la liste : nombres ??"))
+    if operation == 'addition' or 'soustraction':
+        if reponse == somme :
+            print("Bravo ingénieur de demain vous venez de remportez une clef , vous etes sur le chemin de la réussite et de la victoire!!!!!!")
+            return True
+        else :
+            print ("Vous ne faites aucun effort , il s'agirait de se ressaisir !!!!")
+            return False
+    else :
+        if reponse == sommeprod :
+            print("Bravo ingénieur de demain vous venez de remportez une clef , vous etes sur le chemin de la réussite et de la victoire!!!!!!")
+            return True
+        else :
+            print("Vous ne faites aucun effort , il s'agirait de se ressaisir !!!!")
+            return False
+
+
+
