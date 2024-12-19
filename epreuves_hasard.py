@@ -14,7 +14,6 @@ def bonneteau():
 
         if x == presence_clef:
             print("Félicitations, vous avez trouvé la clé !")
-            incremente_key()
             return True
         else:
             print(f"Raté ! Il vous reste {1 - essai} essai(s).")
@@ -45,7 +44,7 @@ def jeu_lance_des():
 
 def fonction_hasard():
     epreuves = [jeu_lance_des(), bonneteau()]
-    epreuve= random.choice(epreuves)
+    epreuve = random.choice(epreuves)
     return epreuve
 
 fonction_hasard()
