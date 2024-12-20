@@ -1,22 +1,27 @@
-import random
+import random # Importation du module random
 
 def bonneteau():
+    # Attribuer les positions des bonneteaux
     bonneteau = ["A","B","C"]
     print("Bienvenue au jeu du Bonneteau !\nTrouvez la clé en 2 essais.")
+    # Choix aléatoire de la position de la clé (1, 2 ou 3 équivalan à A, B, C)
     presence_clef = random.choice(1, 3)
+    # L'utilisateur a 2 essais pour trouver la clé
     for essai in range(2):
         try:
+            # Demande au joueur de choisir un bonneteau (entre A, B, C)
             x = int(input("Choisissez un bonneteau (A=1, B=2, C=3): "))
         except ValueError:
             print("Entrée non valide, réessayez.")
-            continue
+            continue # Passe à l'itération suivante
         print("il vous reste ",essai,"essais")
-
+        # Vérifie si le joueur a trouvé la clé
         if x == presence_clef:
             print("Félicitations, vous avez trouvé la clé !")
-            return True
+            return True # Le joueur gagne donc on retourne True
         else:
             print(f"Raté ! Il vous reste {1 - essai} essai(s).")
+            # Si aucun essai n'a permis de trouver la clé, le joueur perd
     return False
 
 def jeu_lance_des():
