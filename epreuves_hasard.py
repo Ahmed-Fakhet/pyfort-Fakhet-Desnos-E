@@ -21,7 +21,7 @@ def bonneteau():
             return True # Le joueur gagne donc on retourne True
         else:
             print(f"Raté ! Il vous reste {1 - essai} essai(s).")
-            # Si aucun essai n'a permis de trouver la clé, le joueur perd
+            # Si aucun essai n'a permis de trouver la clé, le joueur perd.
     return False
 
 def jeu_lance_des():

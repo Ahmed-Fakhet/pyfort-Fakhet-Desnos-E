@@ -15,7 +15,7 @@ def joueur_retrait(n) :
 def maitre_retrait(n):
     # Stratégie : retirer un nombre qui laisse un multiple de 4 à l'adversaire
     n_retraits = n % 4
-    # Si aucun retrait optimal, retirer 1 bâton par défaut
+    # Si aucun retrait optimal, retirer 1 bâton par défaut.
     if n_retraits == 0:
         n_retraits = 1
     return min(n_retraits, n)
