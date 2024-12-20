@@ -35,4 +35,3 @@ def jeu_nim():
         if total_batonnets == 0:
             print("Le maître du jeu a perdu ! Vous gagnez.")
             break
-s
