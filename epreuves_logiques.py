@@ -27,7 +27,7 @@ def jeu_nim():
     while total_batonnets > 0:
         # Boucle principale du jeu
         affiche_batonnets(total_batonnets)
-
+        #g
         # Tour du joueur
         retrait_joueur = joueur_retrait(total_batonnets)
         print("Combien de batonnets voulez-vous retirer (1, 2 ou 3) ?", retrait_joueur)
