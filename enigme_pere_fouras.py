@@ -1,3 +1,5 @@
+import random
+
 def charger_enigmes(fichier):
     L_enigmes= []
     with open("enigmesPF.json","r") as fichier:
@@ -15,3 +17,5 @@ def charger_enigmes(fichier):
 
 def enigme_pere_fouras():
     global L_enigmes
+    enigme=random.choice(L_enigmes)
+    print(enigme[ke])
