@@ -17,24 +17,25 @@ def epreuve_math_equation():
         S=True
     return S
 S = epreuve_math_equation()
-print(S)
+
 
 
 
 import random
+# Fonction pour calculer la factorielle d'un nombre
 def factorielle(n) :
     res=1
     for i in range(1,n+1):
         res *= i
-    print(res)
+    print(res) # Afficher la factorielle
     return res
 
-def epreuve_factorielle():
-    n = random.randint(1, 10)
+def epreuve_factorielle(): # Epreuve demandant au joueur de calculer une factorielle
+    n = random.randint(1, 10) # Génère un nombre aléatoire entre 1 et 10
     print(n)
-    m = int(input("Quelle est la factoriolle de n ??"))
+    m = int(input("Quelle est la factoriolle de n ?")) # Demander la réponse au joueur
     factorielle(n)
-    if m == n:
+    if m == n: # Vérifier si la réponse est correcte
         print ("Vous avez gagnée une clée")
         return True
     else:
@@ -42,7 +43,7 @@ def epreuve_factorielle():
         return False
 
 
-
+# Fonction pour vérifier si un nombre est premier
 def est_premier(n):
     if n <= 1:
         return False
@@ -51,16 +52,19 @@ def est_premier(n):
             return False
         return True
 
+# Fonction pour trouver le premier nombre supérieur à n qui est premier
 def premier_plus_proche(n):
-    while not est_premier(n):
+    while not est_premier(n): # Répéter jusqu'à ce qu'un nombre premier soit trouvé
         n += 1
     return n
 
+
+# Epreuve demandant de trouver le plus proche nombre premier supérieur
 def epreuve_math_premier(n):
-    n = random.randint(10,20)
+    n = random.randint(10,20) # Génère un entier aléatoire entre 10 et 20
     reponse = int(input("veuillez saisir l'entier supérieur premier le plus proche de n"))
     premier_plus_proche(n)
-    if n == reponse:
+    if n == reponse: # Vérifier si la réponse est correcte
         print("Bravo vous etes le meilleur vous venez de remporter une clef")
         return True
     else:
@@ -68,13 +72,14 @@ def epreuve_math_premier(n):
         return False
 
 
-
+# Epreuve demandant des calculs sur une liste de nombres
 def epreuve_roulette_mathematiques():
-    nombres = [random.randint(1, 20) for _ in range(5)]
+    nombres = [random.randint(1, 20) for _ in range(5)] # Génère une liste de 5 nombres aléatoires
     print(nombres)
-    operation = random.choice(['addition', 'soustraction', 'multiplication'])
+    operation = random.choice(['addition', 'soustraction', 'multiplication']) # Choisir une opération aléatoire
     somme = 0
     sommeprod = 1
+    # Calculer le résultat de l'opération choisie
     for i in range(len(nombres)):
         if operation == 'addition':
             somme += nombres[i]
@@ -82,6 +87,7 @@ def epreuve_roulette_mathematiques():
             somme -= nombres[i]
         else :
             sommeprod *= nombres[i]
+    # Demander la réponse au joueur
     reponse = int(input("quelle est le resultat de l'/la", operation, "entre les nombres de la liste : nombres ??"))
     if operation == 'addition' or 'soustraction':
         if reponse == somme :
@@ -99,7 +105,7 @@ def epreuve_roulette_mathematiques():
             return False
 
 
-
+# Fonction principale pour sélectionner et exécuter une épreuve mathématique
 def epreuve_math():
     epreuves = [
         epreuve_factorielle,
@@ -107,8 +113,9 @@ def epreuve_math():
         epreuve_math_premier,
         epreuve_roulette_mathematiques
     ]
+    # Sélectionner une épreuve de manière aléatoire
     epreuve = random.choice(epreuves)
-    return epreuve()
+    return epreuve() # Exécuter l'épreuve sélectionnée et retourner son résultat
 
 
 
