@@ -18,4 +18,7 @@ def charger_enigmes(fichier):
 def enigme_pere_fouras():
     global L_enigmes
     enigme=random.choice(L_enigmes)
-    print(enigme[ke])
+    print(enigme.keys())
+    print(enigme.values())
+
+
