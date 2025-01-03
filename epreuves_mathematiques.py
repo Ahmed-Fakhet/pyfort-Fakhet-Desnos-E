@@ -1,25 +1,23 @@
-import random
+import random # Importer le module random pour générer des valeurs aléatoires
 a = random.randint(1,10)
 b = random.randint(1,10)
-def resoudre_equation_lineaire(a,b):
-    x = -b/a
+def resoudre_equation_lineaire(a,b): # Fonction pour résoudre une équation linéaire de la forme ax + b = 0
+    x = -b/a # Calcul de la solution
     return a,b,x
 
 S=False
+
+# Fonction représentant une épreuve mathématique pour résoudre une équation
 def epreuve_math_equation():
     global a,b,S
     a, b, x = resoudre_equation_lineaire(a,b)
-    print("Resoudre : ",a,"x +", b, "=", 0)
-    X=float(input("Saisir la solution X :"))
-    if x == X:
+    print("Resoudre : ",a,"x +", b, "=", 0) # Afficher l'équation
+    X=float(input("Saisir la solution X :")) # Demander la solution au joueur
+    if x == X: # Vérifier si la réponse est correcte
         S=True
     return S
-S=epreuve_math_equation()
+S = epreuve_math_equation()
 print(S)
-
-
-
-
 
 
 
@@ -68,8 +66,6 @@ def epreuve_math_premier(n):
     else:
         print("Il s'agirait de faire des efforts vous etes en école d'ingénieur. Vous venez de perdre une clée")
         return False
-
-
 
 
 
