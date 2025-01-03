@@ -104,3 +104,15 @@ def epreuve_roulette_mathematiques():
 
 
 
+def epreuve_math():
+    epreuves = [
+        epreuve_factorielle,
+        epreuve_math_equation,
+        epreuve_math_premier,
+        epreuve_roulette_mathematiques
+    ]
+    epreuve = random.choice(epreuves)
+    return epreuve()
+
+
+
