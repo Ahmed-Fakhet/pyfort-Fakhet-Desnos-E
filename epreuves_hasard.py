@@ -27,30 +27,37 @@ def bonneteau():
 def jeu_lance_des():
     essai = 3
     des={1,2,3,4,5,6}
+    # Boucle pour effectuer les essais
     for i in range (essai) :
         print("vous avez",essai - i,"essais")
         enter=input("appuyez sur entrer pour lancez les dés !")
+        # Générer deux dés pour le joueur et deux dés pour le maître
         des_joueur = {random.choice(des), random.choice(des)}
         des_maitre = {random.choice(des), random.choice(des)}
         print(f"Résultats du joueur : {des_joueur}")
+        # Vérifier si le joueur a obtenu un 6
         if 6 in des_joueur:
             print("le joueur a remporté la partie et la clé.")
             i=4
             return True
+        # Vérifier si le maître a obtenu un 6
         elif 6 in des_maitre :
             print("le maitre a remporté la partie et la clé.")
             i = 4
             return False
+        # Si aucun 6 n'est obtenu, on passe au prochain tour
         else :
             print("On passe au prochain tour.")
+        # Si c'est le dernier essai et qu'aucun 6 n'est obtenu, déclarer un match nul
         if i == 3 and 6 not in des_maitre and 6 not in des_joueur :
             print("Match nul !")
             return False
 
 def fonction_hasard():
-    epreuves = [jeu_lance_des(), bonneteau()]
-    epreuve = random.choice(epreuves)
-    return epreuve
+    # Liste des épreuves disponibles
+    epreuves = [jeu_lance_des(), bonneteau()] # Assurez-vous que `bonneteau()` est défini ailleurs
+    epreuve = random.choice(epreuves) # Choisir une épreuve aléatoire
+    return epreuve # Retourner le résultat de l'épreuve sélectionnée
 
-fonction_hasard()
+
 
