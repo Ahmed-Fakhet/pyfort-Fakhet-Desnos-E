@@ -37,7 +37,7 @@ def jeu():
 
         print(f"\n{joueur['nom']} va participer à l'épreuve !")
 
-        # Lancer l'épreuve
+
         epreuve_reussie = False
         if choix_epreuve == 1:
             epreuve_reussie = epreuve_math()
@@ -60,7 +60,7 @@ def jeu():
             "reussite": epreuve_reussie
         })
 
-    # Étape 3 : Épreuve finale
+
     print(" Épreuve finale : La salle du trésor")
     victoire = salle_De_Tresor()
 
