@@ -2,7 +2,7 @@ import random
 
 def charger_enigmes():
     L_enigmes = []
-    with open("Data/enigmesPF.json", "r") as fichier:
+    with open("Data/enigmesPF.json","r",encoding='utf-8') as fichier:
         for ligne in fichier:
             if "question" in ligne:
                 dico_enigme={}
@@ -22,11 +22,11 @@ def enigme_pere_fouras():
         print ("Il n'y a aucune enigme dispo ")
         return False
     enigme  = random.choice(enigmes)
-    question = enigme["question"]
-    reponse_attendue = enigme["reponse"]
+    question = list(enigme.keys())[0]
+    reponse_attendue = list(enigme.values())[0]
 
     print(" Le père Fouras vous demande :")
-    print(question)
+    print("-->", question)
 
     essais = 3
     while essais > 0 :
@@ -39,8 +39,8 @@ def enigme_pere_fouras():
             if essais > 0 :
                 print ("Faux, il vous restes ",essais,"essai(s)")
             else :
-                print ("Vous avez lamentablement echouer , la bonne reponse etait :",reponse_attendue,".")
+                print ("Vous avez lamentablement echouer , la bonne reponse etait :",reponse_attendue)
                 return False
 
-x=charger_enigmes()
-print(x)
+
+enigme_pere_fouras()

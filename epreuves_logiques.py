@@ -49,26 +49,7 @@ def jeu_nim():
             print("Batonnets restants : ", total_batonnets)
 
 
-#---------------------------------------------------------------------------------------------------
 
-def afficher_grille(grille):
-    for i in range (3) :
-        for j in range (3) :
-            print(grille[i][j])
-        print("---------")
-
-def verifier_victoire(grille, symbole) :
-    for i in range (3) :
-        if grille[i][i] == grille[i+1][i+1] and grille[i][i] == grille[i+2][i+2]:
-            return True
-        elif grille[2-i][2-i] == grille[1-i][1-i] and grille[2-i][2-i] == grille[-i][-i] :
-            return True
-        elif grille[i][0] == grille[i][1] and grille[i][0] == grille[i][2] :
-            return True
-        elif grille[0][i] == grille[1][i] and grille[0][i] == grille[2][i] :
-            return True
-        else :
-            return False
 
 
 
