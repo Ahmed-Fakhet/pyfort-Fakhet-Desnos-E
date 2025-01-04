@@ -21,7 +21,7 @@ def enigme_pere_fouras():
     if not enigmes:
         print ("Il n'y a aucune enigme dispo ")
         return False
-    enigme  = random.choice(enigmes)
+    enigme = random.choice(enigmes)
     question = enigme["question"]
     reponse_attendue = enigme["reponse"]
 
