@@ -8,8 +8,6 @@ import random
 
 
 def jeu():
-
-
     introduction()
     equipe = composer_equipe()
     if not equipe:
@@ -17,18 +15,12 @@ def jeu():
         return
 
     print("L'équipe est prête ! Que le jeu commence.")
-
-
     cles_gagnees = 0
-
-
     historique = []
 
     while cles_gagnees < 3:
         print(" Menu des épreuves ")
         choix_epreuve = menu_epreuves()
-
-
         print("Sélection du joueur ")
         joueur = random.randint(equipe)
         if not joueur:
