@@ -35,7 +35,7 @@ def salle_De_Tresor() :
             elif essaies == 0 :
                 print("Hélas ! Vous n'avez pas trouvé la bonne raiponse, vous etes donc perdant.")
 
-s
+
 
 
 
