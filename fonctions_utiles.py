@@ -39,12 +39,12 @@ def choisir_joueur(equipe): # Cette fonction sert à Selectionner un joueur
         else:
             ROLE = "Membre"
 
-        print(i+1,".", SE["nom"], "(", SE["profession"], ") - ", ROLE) # Affiche les joueurs et leurs information respectives
+        print(i+1,".", SE["nom"], "(", SE["profession"], ") - ", ROLE) # Affiche les joueurs et leurs informations respectives
 
         numero = input("Entrez le numéro du joueur : ") # L'utilisateur choisit un joueur
         while numero > n_joueurs or numero < 0 :
             numero = input("Entrez un numéro valide : ")
-        print(SE[numero]) # Les informations du joueurs choisit s'affiche
+        print(SE[numero]) # Les informations du joueur choisit s'affiche
 
 
 def menu_epreuves(): # Menu pour choisir une épreuve parmi celles disponibles
