@@ -1,4 +1,4 @@
-fro# Importation des modules nécessaires
+# Importation des modules nécessaires
 # Chaque module contient des fonctions ou des classes pour gérer les différentes parties du jeu.
 from epreuves_hasard import *
 from epreuves_logiques import *
