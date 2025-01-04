@@ -10,7 +10,7 @@ import random  # Utilisé pour sélectionner un joueur aléatoire
 
 # Définition de la fonction principale du jeu
 def jeu():
-    # Introduction au jeu (probablement une fonction qui affiche une introduction au joueur)
+    # Introduction au jeu
     introduction()
 
     # Création de l'équipe de joueurs
@@ -34,12 +34,12 @@ def jeu():
 
         # Sélection aléatoire d'un joueur de l'équipe
         print("Sélection du joueur ")
-        joueur = random.randint(equipe)  # Erreur ici : `random.randint` doit être remplacé par `random.choice`
+        joueur = random.choice(equipe)
         if not joueur:  # Vérifie si un joueur a bien été sélectionné
             print("Aucun joueur sélectionné. Fin de la partie.")
             return
 
-        print(f"\n{joueur['nom']} va participer à l'épreuve !")
+        print(joueur['nom'], "va participer à l'épreuve !")
 
         # Initialisation du statut de réussite de l'épreuve
         epreuve_reussie = False
