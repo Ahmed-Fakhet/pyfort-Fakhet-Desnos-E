@@ -1,8 +1,8 @@
 import random
 
-def charger_enigmes(fichier):
+def charger_enigmes():
     L_enigmes = []
-    with open("enigmesPF.json","r") as fichier:
+    with open("Data/enigmesPF.json", "r") as fichier:
         for ligne in fichier:
             if "question" in ligne:
                 dico_enigme={}
@@ -16,12 +16,12 @@ def charger_enigmes(fichier):
 
 
 def enigme_pere_fouras():
-    enigmes = charger_enigmes('enigmesPF.json')
+    enigmes = charger_enigmes()
 
     if not enigmes:
         print ("Il n'y a aucune enigme dispo ")
         return False
-    enigme = random.choice(enigmes)
+    enigme  = random.choice(enigmes)
     question = enigme["question"]
     reponse_attendue = enigme["reponse"]
 
@@ -41,3 +41,6 @@ def enigme_pere_fouras():
             else :
                 print ("Vous avez lamentablement echouer , la bonne reponse etait :",reponse_attendue,".")
                 return False
+
+x=charger_enigmes()
+print(x)
