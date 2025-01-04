@@ -8,7 +8,7 @@ def introduction():
     print("L'objectif est de ramasser trois clés pour accéder à la salle du trésor.")
 
 def composer_equipe():
-    L_joueurs : []
+    L_joueurs = []
     c = 0
     n_joueurs = int(input("combien de joueurs souhaitez-vous inscrire dans l'équipe ? "))
     while n_joueurs < 0 or n_joueurs > 3:
