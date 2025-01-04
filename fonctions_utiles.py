@@ -3,6 +3,7 @@ import enigme_pere_fouras
 import epreuves_logiques
 import epreuves_hasard
 import epreuves_mathematiques
+import random
 
 def introduction(): # Introduction au jeu
     print("Le joueur doit accomplir des épreuves pour gagner des clés et déverrouiller la salle du trésor.")
@@ -26,6 +27,25 @@ def composer_equipe(): # Permet de composer une équipe de joueurs
     if c == 0 :
         L_joueurs[0]["Leader"] = "oui"
     return L_joueurs
+
+equipe = composer_equipe()
+
+def choisir_joueur(equipe): # Cette fonction sert à Selectionner un joueur
+    global n_joueurs
+    for i in range(n_joueurs):
+        SE = equipe[i]
+        if SE["Leader"] == "oui":
+            ROLE = "Leader"
+        else:
+            ROLE = "Membre"
+
+        print(i+1,".", SE["nom"], "(", SE["profession"], ") - ", ROLE) # Affiche les joueurs et leurs information respectives
+
+        numero = input("Entrez le numéro du joueur : ") # L'utilisateur choisit un joueur
+        while numero > n_joueurs or numero < 0 :
+            numero = input("Entrez un numéro valide : ")
+        print(SE[numero]) # Les informations du joueurs choisit s'affiche
+
 
 def menu_epreuves(): # Menu pour choisir une épreuve parmi celles disponibles
     CHOIX =  input("Choisir parmis les epreuves disponibles en selectionnant leur chiffre respectif."
