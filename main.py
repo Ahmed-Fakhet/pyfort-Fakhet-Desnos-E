@@ -34,7 +34,7 @@ def jeu():
 
         # Sélection aléatoire d'un joueur de l'équipe
         print("Sélection du joueur ")
-        joueur = choisir_joueur()
+        joueur = choisir_joueur(equipe)
         if not joueur:  # Vérifie si un joueur a bien été sélectionné
             print("Aucun joueur sélectionné. Fin de la partie.")
             return
