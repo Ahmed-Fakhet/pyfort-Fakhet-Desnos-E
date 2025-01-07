@@ -18,9 +18,6 @@ def composer_equipe(): # Permet de composer une équipe de joueurs
         n_joueurs = int(input("Veuillez entrer un nombre de joueurs égal ou inférieure à 3 . "))
     # Récupérer les informations de chaque joueur
 
-
-
-
     for i in range(n_joueurs):
         leader_valide = False
         nom = input("Saisir le nom du joueur : ")
@@ -46,14 +43,15 @@ def composer_equipe(): # Permet de composer une équipe de joueurs
 
     return L_joueurs
 
-composer_equipe()
+
 
 
 
 def choisir_joueur(equipe): # Cette fonction sert à Selectionner un joueur
-    def choisir_joueur(equipe):
+
+    for i in range(len(equipe)):
         for i in range(len(equipe)):
-            if equipe[i]["leader"] == "oui":
+            if equipe[i]["leader_valide"] == "oui":
                 n = "Leader"
             else:
                 n = "Membre"

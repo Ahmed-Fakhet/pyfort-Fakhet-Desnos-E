@@ -17,10 +17,11 @@ def jeu():
     equipe = composer_equipe()
 
     print("L'équipe est prête ! Que le jeu commence.")
+    joueur = choisir_joueur(equipe)
+
 
     # Initialisation des variables
     cles_gagnees = 0  # Compte le nombre total de clés gagnées
-    historique = []  # Liste pour suivre les épreuves jouées et leurs résultats
 
     # Boucle principale du jeu : s'exécute jusqu'à ce que 3 clés soient gagnées
     while cles_gagnees < 3:
@@ -31,10 +32,10 @@ def jeu():
 
         # Sélection aléatoire d'un joueur de l'équipe
         print("Sélection du joueur ")
-        joueur = choisir_joueur(equipe)
+
+        choisir_joueur(equipe)
 
 
-        print(joueur['nom'], "va participer à l'épreuve !")
 
         # Initialisation du statut de réussite de l'épreuve
         epreuve_reussie = False
@@ -57,12 +58,6 @@ def jeu():
         else:
             print(joueur['nom'], "a échoué à l'épreuve.")
 
-        # Enregistrement des résultats de l'épreuve dans l'historique
-        historique.append({
-            "epreuve": choix_epreuve,  # Numéro de l'épreuve jouée
-            "joueur": joueur["nom"],  # Nom du joueur ayant participé
-            "reussite": epreuve_reussie  # Résultat de l'épreuve (True ou False)
-        })
 
     # Lorsque 3 clés sont gagnées, on passe à l'épreuve finale
     print(" Épreuve finale : La salle du trésor")
