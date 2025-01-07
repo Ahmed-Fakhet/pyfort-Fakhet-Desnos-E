@@ -16,7 +16,7 @@ def epreuve_math_equation():
     if x == X: # Vérifier si la réponse est correcte
         S=True
     return S
-S = epreuve_math_equation()
+
 
 
 

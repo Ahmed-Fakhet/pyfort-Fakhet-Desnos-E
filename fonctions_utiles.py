@@ -28,11 +28,9 @@ def composer_equipe(): # Permet de composer une équipe de joueurs
         L_joueurs[0]["Leader"] = "oui"
     return L_joueurs
 
-equipe = composer_equipe()
 
 def choisir_joueur(equipe): # Cette fonction sert à Selectionner un joueur
-    global n_joueurs
-    for i in range(n_joueurs):
+    for i in range(len(equipe)):
         SE = equipe[i]
         if SE["Leader"] == "oui":
             ROLE = "Leader"
@@ -41,27 +39,27 @@ def choisir_joueur(equipe): # Cette fonction sert à Selectionner un joueur
 
         print(i+1,".", SE["nom"], "(", SE["profession"], ") - ", ROLE) # Affiche les joueurs et leurs informations respectives
 
-        numero = input("Entrez le numéro du joueur : ") # L'utilisateur choisit un joueur
-        while numero > n_joueurs or numero < 0 :
-            numero = input("Entrez un numéro valide : ")
-        print(SE[numero]) # Les informations du joueur choisit s'affiche
+        numero = int(input("Entrez le numéro du joueur : ")) # L'utilisateur choisit un joueur
+        while numero > len(equipe) or numero < 0 :
+            numero = int(input("Entrez un numéro valide : "))
+        print(SE[numero-1]) # Les informations du joueur choisit s'affiche
 
 
 def menu_epreuves(): # Menu pour choisir une épreuve parmi celles disponibles
-    CHOIX =  input("Choisir parmis les epreuves disponibles en selectionnant leur chiffre respectif."
-                   "1. Épreuve de Mathématiques"
-                   "2. Épreuve de Logique"
-                   "3. Épreuve du hasard"
-                   "4. Énigme du Père Fouras"
-                   "CHOIX --> ")
-    liste_epreuves=["Épreuve de Mathématiques","Épreuve de Logique","Épreuve du hasard","Énigme du Père Fouras"] # Liste des choix valides
-    while CHOIX not in liste_epreuves or CHOIX < "1" or CHOIX > "4" :
-        CHOIX = input("Veuillez choisir parmis les epreuves disponibles en selectionnant leur chiffre respectif."
-                      "1. Épreuve de Mathématiques"
-                      "2. Épreuve de Logique"
-                      "3. Épreuve du hasard"
-                      "4. Énigme du Père Fouras"
-                      "CHOIX --> ")
+    print("Choisir parmis les epreuves disponibles en selectionnant leur chiffre respectif.")
+    print("1. Épreuve de Mathématiques")
+    print("2. Épreuve de Logique")
+    print("3. Épreuve du hasard")
+    print("4. Énigme du Père Fouras")
+    CHOIX =  input("CHOIX --> ")
+
+    while CHOIX not in ["1","2","3","4"] :
+        print("Choisir parmis les epreuves disponibles en selectionnant leur chiffre respectif.")
+        print("1. Épreuve de Mathématiques")
+        print("2. Épreuve de Logique")
+        print("3. Épreuve du hasard")
+        print("4. Énigme du Père Fouras")
+        CHOIX = input("CHOIX --> ")
 
     # Retourner le module correspondant à l'épreuve choisie
     if CHOIX == "1":
