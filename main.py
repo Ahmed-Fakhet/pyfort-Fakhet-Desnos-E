@@ -15,9 +15,6 @@ def jeu():
 
     # Création de l'équipe de joueurs
     equipe = composer_equipe()
-    if not equipe:  # Vérification si l'équipe est vide
-        print("Aucune équipe n'a été créée. Fin du jeu.")
-        return  # Arrêt du programme si aucune équipe n'est créée
 
     print("L'équipe est prête ! Que le jeu commence.")
 
@@ -35,9 +32,7 @@ def jeu():
         # Sélection aléatoire d'un joueur de l'équipe
         print("Sélection du joueur ")
         joueur = choisir_joueur(equipe)
-        if not joueur:  # Vérifie si un joueur a bien été sélectionné
-            print("Aucun joueur sélectionné. Fin de la partie.")
-            return
+
 
         print(joueur['nom'], "va participer à l'épreuve !")
 
