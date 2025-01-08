@@ -65,7 +65,7 @@ def choisir_joueur(equipe): # Cette fonction sert à Selectionner un joueur
     n = int(input("Entrez le numéro du joueur choisi : "))
     while n <= 0 or n > len(equipe):
         n = int(input("Ce joueur n'éxiste pas ! Entrez à nouveau le numéro du joueur choisi : "))
-    print("Vous avez choisi ",equipe[n - 1]["nom"], "comme joueur.")
+    print("Vous avez choisi",equipe[n - 1]["nom"], "comme joueur.")
     return equipe[n - 1]
 
 
@@ -95,4 +95,3 @@ def menu_epreuves(): # Menu pour choisir une épreuve parmi celles disponibles
     elif CHOIX == "4":
         return epreuves_logiques
 
-x=menu_epreuves()

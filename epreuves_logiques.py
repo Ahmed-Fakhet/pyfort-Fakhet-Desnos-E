@@ -48,7 +48,7 @@ def jeu_nim():
             print("Batonnets restants : ", total_batonnets)
 
 
-jeu_nim()
+
 
 
 
