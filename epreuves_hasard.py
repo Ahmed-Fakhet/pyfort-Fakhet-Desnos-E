@@ -7,8 +7,9 @@ def bonneteau():
     # Choix aléatoire de la position de la clé (1, 2 ou 3 équivalan à A, B, C)
     presence_clef = random.randint(1, 3)
     # L'utilisateur a 2 essais pour trouver la clé
-    for essai in range(1):
-        print("Il vous reste", essai + 1, "essaies .")
+    for i in range(1):
+        essai = 2
+        print("Il vous reste", essai, "essaies .")
         # Demande au joueur de choisir un bonneteau (entre A, B, C)
         x = int(input("Choisissez un bonneteau (A=1, B=2, C=3): "))
         while x < 1 or x > 3:
@@ -18,7 +19,8 @@ def bonneteau():
             print("Félicitations, vous avez trouvé la clé !")
             return True # Le joueur gagne donc on retourne True
         else:
-            print(f"Raté ! Il vous reste {essai+1} essai(s).")
+            essai -= 1
+            print(f"Raté ! Il vous reste {essai} essai(s).")
             # Si aucun essai n'a permis de trouver la clé, le joueur perd.
     return False
 

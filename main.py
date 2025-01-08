@@ -35,8 +35,6 @@ def jeu():
 
         choisir_joueur(equipe)
 
-
-
         # Initialisation du statut de réussite de l'épreuve
         epreuve_reussie = False
 
@@ -53,7 +51,7 @@ def jeu():
         # Gestion du résultat de l'épreuve
         if epreuve_reussie:
             print(joueur['nom'], "a réussi l'épreuve et gagne une clé !")
-            joueur['cles_gagnees'] += 1  # Mise à jour du nombre de clés du joueur
+            joueur['cles_gagnées'] += 1  # Mise à jour du nombre de clés du joueur
             cles_gagnees += 1  # Mise à jour du nombre total de clés gagnées
         else:
             print(joueur['nom'], "a échoué à l'épreuve.")
