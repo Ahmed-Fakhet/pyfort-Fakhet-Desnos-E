@@ -59,5 +59,5 @@ def fonction_hasard():
     return epreuve # Retourner le résultat de l'épreuve sélectionnée
 
 
-
+print()
 
