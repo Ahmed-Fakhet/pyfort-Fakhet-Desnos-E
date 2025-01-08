@@ -17,7 +17,6 @@ def jeu():
     equipe = composer_equipe()
 
     print("L'équipe est prête ! Que le jeu commence.")
-    joueur = choisir_joueur(equipe)
 
 
     # Initialisation des variables
@@ -25,15 +24,12 @@ def jeu():
 
     # Boucle principale du jeu : s'exécute jusqu'à ce que 3 clés soient gagnées
     while cles_gagnees < 3:
-        print(" Menu des épreuves ")
+
+        joueur = choisir_joueur(equipe)
 
         # Affiche le menu des épreuves et permet au joueur de choisir une épreuve
+        print(" Menu des épreuves ")
         choix_epreuve = menu_epreuves()
-
-        # Sélection aléatoire d'un joueur de l'équipe
-        print("Sélection du joueur ")
-
-        choisir_joueur(equipe)
 
         # Initialisation du statut de réussite de l'épreuve
         epreuve_reussie = False
@@ -46,7 +42,7 @@ def jeu():
         elif choix_epreuve == 3:
             epreuve_reussie = fonction_hasard()  # Épreuve basée sur le hasard
         elif choix_epreuve == 4:
-            epreuve_reussie = enigme_pere_fouras()  # Enigme posée par le Père Fouras
+            enigme_pere_fouras.enigme_pere_fouras()  # Enigme posée par le Père Fouras
 
         # Gestion du résultat de l'épreuve
         if epreuve_reussie:
