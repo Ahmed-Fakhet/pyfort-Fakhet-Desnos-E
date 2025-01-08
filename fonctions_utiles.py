@@ -33,10 +33,11 @@ def composer_equipe(): # Permet de composer une équipe de joueurs
             if leader in ["oui","non"] :
                 leader_valide = True
 
+
         if leader == "oui" :
-            est_leader = True
+            leader_valide = True
         else :
-            est_leader = False
+            leader_valide = False
 
         dico = {"nom":nom, 'profession':profession, 'leader_valide':leader_valide, "cles_gagnees":0}
         L_joueurs.append(dico)
@@ -47,11 +48,12 @@ def composer_equipe(): # Permet de composer une équipe de joueurs
 
 
 
+
 def choisir_joueur(equipe): # Cette fonction sert à Selectionner un joueur
 
     for i in range(len(equipe)):
         for i in range(len(equipe)):
-            if equipe[i]["leader_valide"] == "oui":
+            if equipe[i]["leader_valide"] == True:
                 n = "Leader"
             else:
                 n = "Membre"
