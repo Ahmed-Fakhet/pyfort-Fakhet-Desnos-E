@@ -58,6 +58,6 @@ def fonction_hasard():
     epreuve = random.choice(epreuves) # Choisir une épreuve aléatoire
     return epreuve # Retourner le résultat de l'épreuve sélectionnée
 
-
+fonction_hasard()
 
 

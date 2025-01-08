@@ -1,5 +1,6 @@
 import random
 
+
 def charger_enigmes():
     # Initialiser une liste pour stocker les énigmes
     L_enigmes = []

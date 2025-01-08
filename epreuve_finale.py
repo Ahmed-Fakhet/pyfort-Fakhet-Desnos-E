@@ -28,7 +28,7 @@ def salle_De_Tresor() :
 
     # Boucle principale pour permettre à l'utilisateur de deviner le mot-code
     while essaies > 0 :
-        reponse = input("Saisir une réponse :")
+        reponse = input("Saisir une réponse : ")
         if reponse == mot_code :
             reponse_correcte = True
             break # Quitter la boucle si la réponse est correcte
@@ -39,7 +39,7 @@ def salle_De_Tresor() :
                 print("Voici un autre indice",random.choice(indices[2:]))
             else :
                 # Afficher le mot-code correct si l'utilisateur n'a plus d'essais
-                print("le mote correcte était", mot_code ,"!")
+                print("le mot correcte était", mot_code ,"!")
         # Résultat final en fonction du statut de la réponse
         if reponse_correcte == True :
             print("Felicitations ! Vous avez trouvé la bonne réponse !")

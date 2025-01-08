@@ -30,7 +30,6 @@ def jeu_nim():
 
         # Tour du joueur
         retrait_joueur = joueur_retrait(total_batonnets)
-        print("Combien de batonnets voulez-vous retirer (1, 2 ou 3) ?", retrait_joueur)
         total_batonnets -= retrait_joueur # Met à jour le total de bâtonnets
         if total_batonnets == 0: # Vérifie si le joueur a perdu
             print("Vous avez perdu ! Le maître du jeu gagne.")
@@ -49,7 +48,7 @@ def jeu_nim():
             print("Batonnets restants : ", total_batonnets)
 
 
-
+jeu_nim()
 
 
 
