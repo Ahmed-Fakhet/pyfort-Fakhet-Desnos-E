@@ -23,24 +23,24 @@ def epreuve_math_equation():
 
 import random
 # Fonction pour calculer la factorielle d'un nombre
-def factorielle(n) :
-    res=1
-    for i in range(1,n+1):
+def factorielle(n):
+    res = 1
+    for i in range(1, n + 1):
         res *= i
-    print(res) # Afficher la factorielle
+    print(res)  # Afficher la factorielle
     return res
 
-def epreuve_factorielle(): # Epreuve demandant au joueur de calculer une factorielle
-    n = random.randint(1, 10) # Génère un nombre aléatoire entre 1 et 10
-    print(n)
-    m = int(input("Quelle est la factoriolle de n ?")) # Demander la réponse au joueur
-    factorielle(n)
-    if m == n: # Vérifier si la réponse est correcte
-        print ("Vous avez gagnée une clée")
+def epreuve_factorielle():  # Epreuve demandant au joueur de calculer une factorielle
+    n = random.randint(1, 10)  # Génère un nombre aléatoire entre 1 et 10
+    m = int(input("Quelle est la factorielle de " + str(n) + " ? "))  # Demander la réponse au joueur
+    resultat = factorielle(n)
+    if m == resultat:  # Vérifier si la réponse est correcte
+        print("Vous avez gagné une clé")
         return True
     else:
-        print("Vous n'avez pas gagner de clée vous etes un looser")
+        print("Vous n'avez pas gagné de clé, vous êtes un loser")
         return False
+
 
 
 # Fonction pour vérifier si un nombre est premier
@@ -50,21 +50,23 @@ def est_premier(n):
     for i in range(2, n):
         if n % i == 0:
             return False
-        return True
+    return True
+
 
 # Fonction pour trouver le premier nombre supérieur à n qui est premier
 def premier_plus_proche(n):
+    n += 1
     while not est_premier(n): # Répéter jusqu'à ce qu'un nombre premier soit trouvé
         n += 1
     return n
 
 
 # Epreuve demandant de trouver le plus proche nombre premier supérieur
-def epreuve_math_premier(n):
+def epreuve_math_premier():
     n = random.randint(10,20) # Génère un entier aléatoire entre 10 et 20
-    reponse = int(input("veuillez saisir l'entier supérieur premier le plus proche de n"))
-    premier_plus_proche(n)
-    if n == reponse: # Vérifier si la réponse est correcte
+    reponse = int(input("veuillez saisir l'entier supérieur premier le plus proche de "+ str(n)+ ":"))
+    solution = premier_plus_proche(n)
+    if solution == reponse: # Vérifier si la réponse est correcte
         print("Bravo vous etes le meilleur vous venez de remporter une clef")
         return True
     else:
@@ -88,8 +90,8 @@ def epreuve_roulette_mathematiques():
         else :
             sommeprod *= nombres[i]
     # Demander la réponse au joueur
-    reponse = int(input("quelle est le resultat de l'/la", operation, "entre les nombres de la liste : nombres ??"))
-    if operation == 'addition' or 'soustraction':
+    reponse = int(input("quelle est le resultat de l'/la " +str(operation) +  " entre les nombres de la liste  ??"))
+    if operation == 'addition' or operation == 'soustraction':
         if reponse == somme :
             print("Bravo ingénieur de demain vous venez de remportez une clef , vous etes sur le chemin de la réussite et de la victoire!!!!!!")
             return True
