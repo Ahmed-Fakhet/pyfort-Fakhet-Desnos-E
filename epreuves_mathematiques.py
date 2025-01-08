@@ -18,7 +18,7 @@ def epreuve_math_equation():
     return S
 
 
-
+n = random.randint(1, 10) # Génère un nombre aléatoire entre 1 et 10
 
 
 import random
@@ -30,10 +30,10 @@ def factorielle(n) :
     print(res) # Afficher la factorielle
     return res
 
+
+
 def epreuve_factorielle(): # Epreuve demandant au joueur de calculer une factorielle
-    n = random.randint(1, 10) # Génère un nombre aléatoire entre 1 et 10
-    print(n)
-    m = int(input("Quelle est la factoriolle de n ?")) # Demander la réponse au joueur
+    m = int(input("Quelle est la factoriolle de ",n," ?")) # Demander la réponse au joueur
     factorielle(n)
     if m == n: # Vérifier si la réponse est correcte
         print ("Vous avez gagnée une clée")
@@ -115,7 +115,7 @@ def epreuve_math():
     ]
     # Sélectionner une épreuve de manière aléatoire
     epreuve = random.choice(epreuves)
-    return epreuve() # Exécuter l'épreuve sélectionnée et retourner son résultat
+    return epreuve # Exécuter l'épreuve sélectionnée et retourner son résultat
 
 
 
