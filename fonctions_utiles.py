@@ -93,5 +93,5 @@ def menu_epreuves(): # Menu pour choisir une épreuve parmi celles disponibles
     elif CHOIX == "3":
         return epreuves_hasard
     elif CHOIX == "4":
-        return epreuves_logiques
+        return enigme_pere_fouras
 
