@@ -7,22 +7,27 @@ def bonneteau():
     # Choix aléatoire de la position de la clé (1, 2 ou 3 équivalan à A, B, C)
     presence_clef = random.randint(1, 3)
     # L'utilisateur a 2 essais pour trouver la clé
-    for i in range(1):
-        essai = 2
-        print("Il vous reste", essai, "essaies .")
+    essai = 2
+    print("Vous avez", essai, "essaies .")
+    for i in range(2):
         # Demande au joueur de choisir un bonneteau (entre A, B, C)
         x = int(input("Choisissez un bonneteau (A=1, B=2, C=3): "))
         while x < 1 or x > 3:
             x = int(input("Entrée non valide, réessayez."))
         # Vérifie si le joueur a trouvé la clé
+        essai -= 1
         if x == presence_clef:
             print("Félicitations, vous avez trouvé la clé !")
             return True # Le joueur gagne donc on retourne True
+        elif essai == 0:
+            print("Vous avez perdu !")
+            return False
         else:
-            essai -= 1
             print(f"Raté ! Il vous reste {essai} essai(s).")
             # Si aucun essai n'a permis de trouver la clé, le joueur perd.
-    return False
+
+
+
 
 def jeu_lance_des():
     essai = 3
@@ -56,10 +61,9 @@ def jeu_lance_des():
 
 def fonction_hasard():
     # Liste des épreuves disponibles
-    epreuves = [jeu_lance_des(), bonneteau()] # Assurez-vous que `bonneteau()` est défini ailleurs
+    epreuves = [jeu_lance_des, bonneteau] # Assurez-vous que `bonneteau()` est défini ailleurs
     epreuve = random.choice(epreuves) # Choisir une épreuve aléatoire
-    return epreuve # Retourner le résultat de l'épreuve sélectionnée
-
+    return epreuve() # Retourner le résultat de l'épreuve sélectionnée
 
 
 
