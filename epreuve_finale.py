@@ -42,9 +42,9 @@ def salle_De_Tresor() :
                 print("le mot correcte était", mot_code ,"!")
         # Résultat final en fonction du statut de la réponse
         if reponse_correcte == True :
-            print("Felicitations ! Vous avez trouvé la bonne réponse !")
+            print("Félicitations ! Vous avez trouvé la bonne réponse !")
         elif essaies == 0 :
-            print("Hélas ! Vous n'avez pas trouvé la bonne réponse, vous etes donc perdant.")
+            print("Hélas ! Vous n'avez pas trouvé la bonne réponse, vous êtes donc perdant.")
 
 
 
