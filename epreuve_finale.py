@@ -44,7 +44,7 @@ def salle_De_Tresor() :
         if reponse_correcte == True :
             print("Felicitations ! Vous avez trouvé la bonne réponse !")
         elif essaies == 0 :
-            print("Hélas ! Vous n'avez pas trouvé la bonne raiponse, vous etes donc perdant.")
+            print("Hélas ! Vous n'avez pas trouvé la bonne réponse, vous etes donc perdant.")
 
 
 
