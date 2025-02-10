@@ -17,9 +17,9 @@ def salle_De_Tresor() :
     emission = random.choice(list(emissions))
 
     # Obtenir les indices de l'émission sélectionnée
-    indices = jeu_tv["Fort Boyard"][annee][emission]["Indices"]
+    indices = jeu_tv["Fort Boyard"][annee][emission].get("Indices")
     # Choisir un mot-code aléatoire parmi les indices
-    mot_code = random.choice(indices)
+    mot_code = jeu_tv["Fort Boyard"][annee][emission].get("MOT-CODE")
 
     # Afficher les trois premiers indices pour aider l'utilisateur
     print("Voici les trois premiers indices : 1.",indices[0], "2.",indices[1], "3.",indices[2])
@@ -28,10 +28,11 @@ def salle_De_Tresor() :
 
     # Boucle principale pour permettre à l'utilisateur de deviner le mot-code
     while essaies > 0 :
-        reponse = input("Saisir une réponse : ")
+        reponse = input("Saisir une réponse : ").upper()
+
         if reponse == mot_code :
             reponse_correcte = True
-            break # Quitter la boucle si la réponse est correcte
+            return # Quitter la boucle si la réponse est correcte
         else :
             essaies = essaies - 1 # Réduire le nombre d'essais restants
             if essaies > 0 :
@@ -46,6 +47,7 @@ def salle_De_Tresor() :
         elif essaies == 0 :
             print("Hélas ! Vous n'avez pas trouvé la bonne réponse, vous êtes donc perdant.")
 
+salle_De_Tresor()
 
 
 
